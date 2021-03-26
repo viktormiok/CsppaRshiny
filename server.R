@@ -80,7 +80,7 @@ server <- function(input, output, session) {
             dat_mark2 = marker[[3]]
             diet2 = 15
           }
-          if(input$plt2 == "3D_plot"){
+          if(input$plt2 == "3D_dens"){
             d3.aspp(data = dat_mark2,
                     type_plot = "3D_plot",
                     window = owin(poly = list(x = c(0, 500, 0), y = c(0, 0, 500))),
@@ -89,12 +89,23 @@ server <- function(input, output, session) {
                     phi = 20
             )
           } else{
-            p <- d3.aspp(data = dat_mark2,
-                         type_plot = "3D_plot_interactive"
-            )
-            print(p)
+            if(input$plt2 == "3D_scatter"){
+              ps <- scatter3D(dat_mark2$X, 
+                              dat_mark2$Y,
+                              as.numeric(as.factor(paste0(dat_mark2$Mouse, dat_mark2$ARC, dat_mark2$Diet))),
+                              pch=20,
+                              nticks=5, col="cornflowerblue",
+                              ticktype="detailed",theta=50, phi=5, xlab="X", 
+                              ylab="Y", zlab="Slides", main="gfap", cex=0.3)
+              print(ps)
+            } else{
+              p <- d3.aspp(data = dat_mark2,
+                           type_plot = "3D_plot_interactive"
+              )
+              print(p)
+            }
+            
           }
-          
         }
         if(input$analysis == "classification_plot"){
           marker1 <- get.data(data = dat,
@@ -118,9 +129,7 @@ server <- function(input, output, session) {
                               arc = 1:8,
                               cal_arc = FALSE
           )
-          if(input$var23 == "Chow") all = rbind(marker1[[1]], marker2[[1]], marker3[[1]]) 
-          if(input$var23 == "HFHS 5 days") all = rbind(marker1[[2]], marker2[[2]], marker3[[2]])
-          if(input$var23 == "HFHS 5 days") all = rbind(marker1[[3]], marker2[[3]], marker3[[3]])
+          all = rbind(marker1[[1]], marker2[[1]], marker3[[1]]) 
           
           moran = test.saptcorr(dataX = all$X,
                                 dataY = all$Y, 
@@ -128,27 +137,37 @@ server <- function(input, output, session) {
                                 method = "Moran.I"
           )
           if(input$plt3 == "random_forest"){
-            theme_update(text = element_text(size = 40))
+            theme_update(text = element_text(size = 20))
             pl = randF.class(dataX = all$X,
                              dataY = all$Y, 
                              dataG = all$Gene) + 
               xlab(expression(paste("Distance ", "(", mu, "m)"))) +
               ylab(expression(paste("Distance ", "(", mu, "m)"))) + 
               scale_fill_manual(values = c("green1", "yellow", "magenta")) +
-              xlim(0,520) +
-              ylim(0,500) +
-              geom_text(x = 400, 
-                        y = 400,
+              xlim(0,500) +
+              ylim(0,450) +
+              geom_text(x = 350, 
+                        y = 350,
                         label = paste("Moran.I = ", 
                                       as.character(round(moran$observed, 3))),
-                        size = 20
+                        size = 7
               )
             print(pl)
           } else{
-            p <- d3.aspp(data = dat_mark2,
-                         type_plot = "3D_plot_interactive"
-            )
-            print(pl)
+            theme_update(text = element_text(size = 20))
+            pk <- plot.2d.knn(train_labels = all$Gene, 
+                              train_data = all[,6:7],
+                              k = 5,
+                              X1 = "X",
+                              X2 = "Y") + 
+              annotate("text", 
+                       x = 400,
+                       y = 400, 
+                       label = paste("Moran.I = ", as.character(round(t$observed, 3))),
+                       size = 6) + 
+              xlab(expression(paste("Distance ", "(", mu, "m)"))) +
+              ylab(expression(paste("Distance ", "(", mu, "m)")))
+            print(pk)
           }
           
         }

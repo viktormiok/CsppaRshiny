@@ -32,6 +32,9 @@ source("gg.aspp.R")
 source("d3.aspp.R")
 source("test.saptcorr.R")
 source("randF.class.R")
+source("get.knn.R")
+source("plot.2d.classify.R")
+source("plot.2d.knn.R")
 
 # working directory
 setwd("/Users/viktorian.miok/Documents/consultation/Luiza/SPPA_astrocytes/shiny/asppa/")
@@ -74,14 +77,14 @@ ui <- fluidPage(
       ),
       conditionalPanel(
         condition = "input.analysis == '3D_plots'",
-        selectInput(inputId = "plt2", label = "Plot", choices = c("3D_plot","3D_plot_interactive"), width = 200),
+        selectInput(inputId = "plt2", label = "Plot", choices = c("3D_dens","3D_scatter","3D_dens_interactive"), width = 200),
         selectInput(inputId = "var12", label = "Marker", choices = c("Aldh1l1", "Gfap", "Colocalization"), width = 200),
         selectInput(inputId = "var22", label = "Diet", choices = c("Chow", "HFHS 5 days", "HFHS 15 days"), width = 200),
         actionButton(inputId = "update", label = "Update", width = 130, hight = 5)
       ),
       conditionalPanel(
         condition = "input.analysis == 'classification_plot'",
-        selectInput(inputId = "plt3", label = "Plot", choices = c("knn_network","random_forest"), width = 200),
+        selectInput(inputId = "plt3", label = "Plot", choices = c("random_forest","knn_network"), width = 200),
         selectInput(inputId = "var23", label = "Diet", choices = c("Chow", "HFHS 5 days", "HFHS 15 days"), width = 200),
         actionButton(inputId = "update", label = "Update", width = 130, hight = 5)
       )
