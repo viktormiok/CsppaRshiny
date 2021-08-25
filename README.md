@@ -5,5 +5,5 @@ The application performs 3D and 2D for visualisation of spatial point pattern de
 
 K Nearest Neighbour and Random Forest classification algorithms are implemented to compare the grouping of the cells expressing different markers within and between the diets. On top of the, correlation and spatial auto-correlation of the cells expressing different markets can be compared using Mentel and Moran I test, respectively.
 
-# How to Run the app
+## How to Run the app
 If you downloaded the app locally, have all the dependencies, and wish to run it, simply open the app.R file in RStudio and click the Run App button.
