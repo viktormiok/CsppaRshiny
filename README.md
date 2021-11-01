@@ -8,7 +8,7 @@ K Nearest Neighbour and Random Forest classification algorithms are implemented 
 ## How to Run the App
 If you downloaded the app locally, have all the dependencies, and wish to run it, simply open the app.R file in RStudio and click the Run App button.
 
-# References
+## References
 
 Publications related to `CsppaRshiny` include:
 
