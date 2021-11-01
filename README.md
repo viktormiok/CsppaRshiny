@@ -7,3 +7,10 @@ K Nearest Neighbour and Random Forest classification algorithms are implemented 
 
 ## How to Run the App
 If you downloaded the app locally, have all the dependencies, and wish to run it, simply open the app.R file in RStudio and click the Run App button.
+
+# References
+
+Publications related to `CsppaRshiny` include:
+
+- Lutomska, L.M., Miok, V., Krahmer, N., González García, I., Gruber, T., Le Thuc, O., De Bernardis Murat, C., Legutko, B., Sterr, M., Saher, G., Lickert, H., Ussar, S., Tschöp, M., Lutter, D., García-Cáceres, C.(2021), "Hypercaloric diet selectively triggers a transient molecular rearrangement of astrocytes in the arcuate nucleus", *In preparation.
+
