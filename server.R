@@ -1,12 +1,15 @@
-server <- function(input, output, session) {
-  
+server <- function(input, 
+                   output,
+                   session) {
   observeEvent(input$update, {
     if(!is.null(input$datafile)){
       
-      dat <- read.csv(input$datafile$datapath, sep=";")
-      if(input$var1 == "Gfap") mark='gfap_only'
-      if(input$var1 == "Aldh1l1") mark='aldh_only' 
-      if(input$var1 == "Colocalization") mark='both'
+      dat <- read.csv(input$datafile$datapath,
+                      sep=";"
+      )
+      if(input$var1 == "Gfap") mark = 'gfap_only'
+      if(input$var1 == "Aldh1l1") mark = 'aldh_only' 
+      if(input$var1 == "Colocalization") mark = 'both'
       marker <- get.data(data=dat,
                          marker=mark, 
                          diet=c(0, 5, 15),
@@ -15,23 +18,23 @@ server <- function(input, output, session) {
                          cal_arc=FALSE
       )
       if(input$var2 == "Chow"){
-        dat_mark2=marker[[1]]
-        diet2=0
+        dat_mark2 = marker[[1]]
+        diet2 = 0
       }
       if(input$var2 == "HFHS 5 days"){
-        dat_mark2=marker[[2]]
-        diet2=5
+        dat_mark2 = marker[[2]]
+        diet2 = 5
       }
       if(input$var2 == "HFHS 15 days"){
-        dat_mark2=marker[[3]]
-        diet2=15
+        dat_mark2 = marker[[3]]
+        diet2 = 15
       }
       output$plot <- renderPlot({
         if(input$analysis == "initial_visualization"){
           
-          if(input$var11 == "Gfap") mark='gfap_only'
-          if(input$var11 == "Aldh1l1") mark='aldh_only'
-          if(input$var11 == "Colocalization") mark='both'
+          if(input$var11 == "Gfap") mark = 'gfap_only'
+          if(input$var11 == "Aldh1l1") mark = 'aldh_only'
+          if(input$var11 == "Colocalization") mark = 'both'
           marker <- get.data(data=dat,
                              marker=mark, 
                              diet=c(0, 5, 15),
@@ -40,16 +43,16 @@ server <- function(input, output, session) {
                              cal_arc=FALSE
           )
           if(input$var21 == "Chow"){
-            dat_mark2=marker[[1]]
-            diet2=0
+            dat_mark2 = marker[[1]]
+            diet2 = 0
           }
           if(input$var21 == "HFHS 5 days"){
-            dat_mark2=marker[[2]]
-            diet2=5
+            dat_mark2 = marker[[2]]
+            diet2 = 5
           }
           if(input$var21 == "HFHS 15 days"){
-            dat_mark2=marker[[3]]
-            diet2=15
+            dat_mark2 = marker[[3]]
+            diet2 = 15
           }
           p <- gg.aspp(data=dat_mark2,
                        type_plot=input$plt1,
@@ -58,9 +61,9 @@ server <- function(input, output, session) {
           print(p)
         }
         if(input$analysis == "3D_plots"){
-          if(input$var12 == "Gfap") mark='gfap_only'
-          if(input$var12 == "Aldh1l1") mark='aldh_only'
-          if(input$var12 == "Colocalization") mark='both'
+          if(input$var12 == "Gfap") mark = 'gfap_only'
+          if(input$var12 == "Aldh1l1") mark = 'aldh_only'
+          if(input$var12 == "Colocalization") mark = 'both'
           marker <- get.data(data=dat,
                              marker=mark, 
                              diet=c(0, 5, 15),
@@ -69,16 +72,16 @@ server <- function(input, output, session) {
                              cal_arc=FALSE
           )
           if(input$var22 == "Chow"){
-            dat_mark2=marker[[1]]
-            diet2=0
+            dat_mark2 = marker[[1]]
+            diet2 = 0
           }
           if(input$var22 == "HFHS 5 days"){
-            dat_mark2=marker[[2]]
-            diet2=5
+            dat_mark2 = marker[[2]]
+            diet2 = 5
           }
           if(input$var22 == "HFHS 15 days"){
-            dat_mark2=marker[[3]]
-            diet2=15
+            dat_mark2 = marker[[3]]
+            diet2 = 15
           }
           if(input$plt2 == "3D_dens"){
             d3.aspp(data=dat_mark2,
@@ -140,9 +143,9 @@ server <- function(input, output, session) {
                               arc=1:8,
                               cal_arc=FALSE
           )
-          if(input$var23 == "Chow") all=rbind(marker1[[1]], marker2[[1]], marker3[[1]]) 
-          if(input$var23 == "HFHS 5 days") all=rbind(marker1[[2]], marker2[[2]], marker3[[2]]) 
-          if(input$var23 == "HFHS 15 days") all=rbind(marker1[[3]], marker2[[3]], marker3[[3]]) 
+          if(input$var23 == "Chow") all = rbind(marker1[[1]], marker2[[1]], marker3[[1]]) 
+          if(input$var23 == "HFHS 5 days") all = rbind(marker1[[2]], marker2[[2]], marker3[[2]]) 
+          if(input$var23 == "HFHS 15 days") all = rbind(marker1[[3]], marker2[[3]], marker3[[3]]) 
           
           moran=test.saptcorr(dataX=all$X,
                               dataY=all$Y, 
@@ -185,9 +188,9 @@ server <- function(input, output, session) {
           
         }
         if(input$analysis == "density_test_plots"){
-          if(input$var1 == "Gfap") mark='gfap_only'
-          if(input$var1 == "Aldh1l1") mark='aldh_only' 
-          if(input$var1 == "Colocalization") mark='both'
+          if(input$var1 == "Gfap") mark = 'gfap_only'
+          if(input$var1 == "Aldh1l1") mark = 'aldh_only' 
+          if(input$var1 == "Colocalization") mark = 'both'
           marker <- get.data(data=dat,
                              marker=mark, 
                              diet=c(0, 5, 15),
@@ -196,28 +199,28 @@ server <- function(input, output, session) {
                              cal_arc=FALSE
           )
           if(input$var2 == "Chow"){
-            dat_mark2=marker[[1]]
-            diet2=0
+            dat_mark2 = marker[[1]]
+            diet2 = 0
           }
           if(input$var2 == "HFHS 5 days"){
-            dat_mark2=marker[[2]]
-            diet2=5
+            dat_mark2 = marker[[2]]
+            diet2 = 5
           }
           if(input$var2 == "HFHS 15 days"){
-            dat_mark2=marker[[3]]
-            diet2=15
+            dat_mark2 = marker[[3]]
+            diet2 = 15
           }
           if(input$var3 == "Chow"){
-            dat_mark3=marker[[1]]
-            diet3=0
+            dat_mark3 = marker[[1]]
+            diet3 = 0
           }
           if(input$var3 == "HFHS 5 days"){
-            dat_mark3=marker[[2]]
-            diet3=5
+            dat_mark3 = marker[[2]]
+            diet3 = 5
           }
           if(input$var3 == "HFHS 15 days"){
-            dat_mark3=marker[[3]]
-            diet3=15
+            dat_mark3 = marker[[3]]
+            diet3 = 15
           }
           if(input$plt == "square_plot"){
             if(input$var3 == "none"){
