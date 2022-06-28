@@ -54,6 +54,6 @@ __`CsppaRshiny`__ is distributed under the MIT license. The informatoin about th
 
 Publications related to __`CsppaRshiny`__ include:
 
-- Lutomska, L.M., Miok, V., Krahmer, N., González García, I., Gruber, T., Le Thuc, O., De Bernardis Murat, C., Legutko, B., Sterr, M., Saher, G., Lickert, H., Ussar, S., Tschöp, M., Lutter, D., García-Cáceres, C. (2022), "Hypercaloric diet triggers transient molecular rearrangements of astrocytes selectively in the arcuate nucleus", *Submitted*.
+- Lutomska, L.M., Miok, V., Krahmer, N., González García, I., Gruber, T., Le Thuc, O., De Bernardis Murat, C., Legutko, B., Sterr, M., Saher, G., Lickert, H., Ussar, S., Tschöp, M., Lutter, D., García-Cáceres, C. (2022), "Hypercaloric diet triggers transient molecular rearrangements of astrocytes selectively in the arcuate nucleus", *Accepted Glia*.
 
 Please cite the relevant publications if you use __`CsppaRshiny`__.
