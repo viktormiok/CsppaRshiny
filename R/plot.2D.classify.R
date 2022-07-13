@@ -55,19 +55,19 @@ plot.2D.classify <- function(to_classify_labels,
                   if (!is(plot_class_rate, "logical")) {
                     stop("Input (plot_class_rate) is of wrong class.")
                   }
-                  gridX1 <- seq( 
-                    min(to_classify_data[, X1]), 
-                    max(to_classify_data[, X1]), 
-                    length.out=lengthX1
+                  gridX1 <- seq(min(to_classify_data[, X1]), 
+                                max(to_classify_data[, X1]), 
+                                length.out=lengthX1
                   )
-                  gridX2 <- seq(
-                    min(to_classify_data[, X2]), 
-                    max(to_classify_data[, X2]), 
-                    length.out=lengthX2
+                  gridX2 <- seq(min(to_classify_data[, X2]), 
+                                max(to_classify_data[, X2]), 
+                                length.out=lengthX2
                   )
                   # compute grid coordinates with cartesian product
-                  grid_data <- expand.grid(gridX1, gridX2) 
-                  names(grid_data) <- c(X1, X2)
+                  grid_data <- expand.grid(gridX1, 
+                                           gridX2
+                  ) 
+                  names(grid_data) = c(X1, X2)
                   # assign grid cells to classes based on classification rule:
                   grid_result <- classify_method( 
                     to_classify_data=grid_data
@@ -76,7 +76,7 @@ plot.2D.classify <- function(to_classify_labels,
                   # assign data to be classified based on classification rule &
                   # check these "predictions"
                   to_check_result <- classify_method(
-                    to_classify_data=to_classify_data[, c(X1, X2)] )
+                    to_classify_data = to_classify_data[, c(X1, X2)] )
                   to_classify_data$class <- to_classify_labels
                   to_classify_data$correct <- 
                     (to_check_result$prediction == to_classify_labels)
