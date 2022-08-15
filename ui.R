@@ -121,14 +121,14 @@ ui <- fluidPage(
                        )
       ),
       br(),
-      hr(style = "border-top: 1px solid #000000;"),
+      hr(style="border-top: 1px solid #000000;"),
       downloadButton(
-        outputId = "download_epicurve",
-        label = "Download plot"
+        outputId="download_epicurve",
+        label="Download plot"
       )
     ),
     mainPanel(
-      h3("Figure", align = "center"),
+      h3("Figure", align="center"),
       plotOutput(outputId="plot",
                  height="700px",
                  width="700px"
