@@ -198,17 +198,17 @@ dens.aspp <- function(data,
                   plot(intensity(Q2-Q1, image=TRUE), 
                        main=title, 
                        las=1,
-                       zlim=c(-max(abs(intensity(Q2-Q1, image=TRUE)$v), na.rm=T),
-                                max(abs(intensity(Q2-Q1, image=TRUE)$v), na.rm=T)),
+                       zlim=c(-max(abs(intensity(Q2-Q1, image=TRUE)$v), na.rm=TRUE),
+                                max(abs(intensity(Q2-Q1, image=TRUE)$v), na.rm=TRUE)),
                        axes=TRUE,
                        box=FALSE,
                        ribbon=ribbon,
                        cex.axis=cex.axis,
                        cex.lab=cex.lab,
                        col=colorRampPalette(col, 
-                                              bias=ifelse(is.null(bias),
-                                                            1,
-                                                            bias))(n=255)
+                                            bias=ifelse(is.null(bias),
+                                                        1,
+                                                        bias))(n=255)
                   )
                 } else{ plot(intensity(Q2-Q1, image=TRUE), 
                              main=title, 
@@ -220,9 +220,9 @@ dens.aspp <- function(data,
                              cex.axis=cex.axis,
                              cex.lab=cex.lab,
                              col=colorRampPalette(col, 
-                                                    bias=ifelse(is.null(bias),
-                                                                  1,
-                                                                  bias))(n=255)
+                                                  bias=ifelse(is.null(bias),
+                                                              1,
+                                                              bias))(n=255)
                 )
                 }
               } else { if(is.null(z_lim)){
@@ -235,9 +235,9 @@ dens.aspp <- function(data,
                      cex.axis=cex.axis,
                      cex.lab=cex.lab,
                      col=colorRampPalette(col, 
-                                            bias=ifelse(is.null(bias), 
-                                                          1,
-                                                          bias))(n=255)
+                                          bias=ifelse(is.null(bias), 
+                                                      1,
+                                                      bias))(n=255)
                 )
               } else{plot(intensity(Q1, image=TRUE), 
                           main=title, 
@@ -249,9 +249,9 @@ dens.aspp <- function(data,
                           cex.axis=cex.axis,
                           cex.lab=cex.lab,
                           col=colorRampPalette(col, 
-                                                 bias=ifelse(is.null(bias),
-                                                               1,
-                                                               bias))(n=255)
+                                               bias=ifelse(is.null(bias),
+                                                           1,
+                                                           bias))(n=255)
               )
               }
               }  
@@ -266,7 +266,11 @@ dens.aspp <- function(data,
                     cex=cex.lab
               )
               if(ribbon){
-                mtext("Kernel Density", side=4, line=1, cex=cex.lab)
+                mtext("Kernel Density", 
+                      side=4,
+                      line=1,
+                      cex=cex.lab
+                )
               }
             }
             if(type_plot == "subtraction_dens_plot"){
@@ -288,14 +292,14 @@ dens.aspp <- function(data,
                 p <- plot(k2 - k1, 
                           las=1, 
                           main=title,
-                          zlim=c(-max(abs((k2-k1)$v), na.rm=T),max(abs((k2-k1)$v), na.rm=T)),
+                          zlim=c(-max(abs((k2-k1)$v), na.rm=TRUE),max(abs((k2-k1)$v), na.rm=TRUE)),
                           axes=TRUE,
                           box=FALSE,
                           ribbon=ribbon,
                           col=colorRampPalette(col, 
-                                                 bias=ifelse(is.null(bias),
-                                                               1,
-                                                               bias))(n=255),
+                                               bias=ifelse(is.null(bias),
+                                                           1,
+                                                           bias))(n=255),
                           cex.axis=cex.axis,
                           cex.lab=cex.lab
                 ) 
@@ -308,9 +312,9 @@ dens.aspp <- function(data,
                           box=FALSE,
                           ribbon=ribbon,
                           col=colorRampPalette(col, 
-                                                 bias=ifelse(is.null(bias),
-                                                               1,
-                                                               bias))(n=255),
+                                               bias=ifelse(is.null(bias),
+                                                           1,
+                                                           bias))(n=255),
                           cex.axis=cex.axis,
                           cex.lab=cex.lab
                 ) 
@@ -330,7 +334,11 @@ dens.aspp <- function(data,
                     cex=cex.lab
               )
               if(ribbon){
-                mtext("Kernel Density", side=4, line=1, cex=cex.lab)
+                mtext("Kernel Density",
+                      side=4, 
+                      line=1, 
+                      cex=cex.lab
+                )
               }
             } 
             if(type_plot == "test_plot"){
@@ -426,7 +434,11 @@ dens.aspp <- function(data,
                     cex=cex.lab
               )
               if(ribbon){
-                mtext("Kernel Density", side=4, line=1, cex=cex.lab)
+                mtext("Kernel Density",
+                      side=4,
+                      line=1,
+                      cex=cex.lab
+                )
               }
               
             }
