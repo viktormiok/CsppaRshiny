@@ -85,7 +85,7 @@ diff.aspp <- function(null,
               stop("Input (testonly) is of wrong class.")
             }
             
-            a <- b <- result <- numeric()
+            a = b = result = numeric()
             for(i in 1:length(null)){
               a <- rbind(a, quadratcount(ppp(null[[i]]$X,
                                              null[[i]]$Y, 
@@ -113,8 +113,12 @@ diff.aspp <- function(null,
                                            exact=FALSE)$p.value
               }   
             }
-            null_all <- do.call("rbind", null)
-            alt_all <- do.call("rbind", alternative)
+            null_all <- do.call("rbind",
+                                null
+            )
+            alt_all <- do.call("rbind",
+                               alternative
+            )
             
             t1 <- ppp(null_all$X, 
                       null_all$Y,
@@ -150,10 +154,10 @@ diff.aspp <- function(null,
                                nx=nr_sq,
                                ny=nr_sq
             )
-            Q2$expected <- Q1
+            Q2$expected = Q1
             #padj <- p.adjust(result, "fdr")
-            result[is.nan(result)] <- 1
-            Q2$residuals <- result #padj
+            result[is.nan(result)] = 1
+            Q2$residuals = result #padj
             if(!testonly){
               p <- plot(Q2,
                         add=TRUE,
@@ -169,11 +173,15 @@ diff.aspp <- function(null,
                     line=2
               )
               if(ribbon){
-                mtext("Kernel Density", side=4, line=1, cex=cex.lab)
+                mtext("Kernel Density",
+                      side=4,
+                      line=1,
+                      cex=cex.lab
+                )
               }
             }
-            treated=as.numeric(Q2$observed)
-            untreated=as.numeric(Q2$expected)
+            treated = as.numeric(Q2$observed)
+            untreated = as.numeric(Q2$expected)
             if(method == "friedman"){
               frid=friedman.test(cbind(treated, untreated))
               text(300, 450, 
@@ -188,13 +196,14 @@ diff.aspp <- function(null,
               }
             }
             if(method == "wilcox"){
-              wilc=wilcox.exact(treated,
-                                  untreated,
-                                  paired=TRUE,
-                                  alternative="greater",
-                                  exact=FALSE
+              wilc <- wilcox.exact(treated,
+                                   untreated,
+                                   paired=TRUE,
+                                   alternative="greater",
+                                   exact=FALSE
               )
-              text(300, 450, 
+              text(300,
+                   450, 
                    paste("Friedman rank sum test:","\n p-value =", as.character(frid$p.value)),
                    cex=1
               )
