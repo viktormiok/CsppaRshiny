@@ -45,20 +45,22 @@ get.knn <- function(train_labels,
           # k: single positive integer, at most number of rows of train_data
           # distance: a function taking two arguments 
           #           (hard to check beyond that...)
-          num_preds <- nrow(to_classify_data)
+          num_preds = nrow(to_classify_data)
           pred <- rep(as.character(NA),
                       num_preds
           )
           # transform data to speedup computation
-          train_data <- data.matrix(train_data) 
-          to_classify_data <- data.matrix(to_classify_data)
+          train_data = data.matrix(train_data) 
+          to_classify_data = data.matrix(to_classify_data)
           # standardize the feature vectors if desired
           if (standardize == TRUE) { 
-            train_data <- scale(train_data) 
+            train_data = scale(train_data) 
             to_classify_data <- scale(
               to_classify_data,
-              center=attr(train_data, "scaled:center"), 
-              scale=attr(train_data, "scaled:scale")
+              center=attr(train_data, 
+                          "scaled:center"), 
+              scale=attr(train_data,
+                         "scaled:scale")
             ) 
           }
           for (i in seq_len(num_preds)) {
@@ -69,15 +71,15 @@ get.knn <- function(train_labels,
               FUN=function(x) distance(x, to_classify_data[i, ])
             )
             # extract row indices of k nearest ones
-            nearest_neighbors <- order(distance_to_train)[1:k]
+            nearest_neighbors = order(distance_to_train)[1:k]
             # compute frequencies of classes in neighborhood 
-            class_frequency <- table(train_labels[nearest_neighbors]) 
+            class_frequency = table(train_labels[nearest_neighbors]) 
             most_frequent_classes <- 
               names(class_frequency)[class_frequency == max(class_frequency)]
             # random tie breaking if more than 1 class has maximal frequency.
             # (causes the occasionally weird, fuzzy class 
             #  boundaries in the figs. below) 
-            pred[i] <- sample(most_frequent_classes, 1)
+            pred[i] = sample(most_frequent_classes, 1)
           }
           list(prediction=pred,
                levels=levels(train_labels)
