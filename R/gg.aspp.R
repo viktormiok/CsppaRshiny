@@ -115,66 +115,68 @@ gg.aspp <- function(data,
                     axis.text=element_text(size=axis.text),
                     axis.title=element_text(size=axis.title),
                     plot.title=element_text(size=plot.title)) + 
-              xlim(xlim) +
-              ylim(ylim)
+                    xlim(xlim) +
+                    ylim(ylim)
             return(p)
           }
           if(type_plot == 'scatter_plot'){
             # scatter plot
             p <- ggplot(data, aes(x=X, y=Y)) + 
-              stat_density2d(geom="tile",
-                             aes(fill=..density..),
-                             contour=FALSE) + 
-              geom_point(colour="white") +
-              ggtitle(title) +
-              theme(legend.text=element_text(size=legend.text),
-                    legend.title=element_text(size=legend.title),
-                    axis.text=element_text(size=axis.text),
-                    axis.title=element_text(size=axis.title),
-                    plot.title=element_text(size=plot.title)) + 
-              xlim(xlim) +
-              ylim(ylim)
+                        stat_density2d(geom="tile",
+                                       aes(fill=..density..),
+                                       contour=FALSE) + 
+                        geom_point(colour="white") +
+                        ggtitle(title) +
+                        theme(legend.text=element_text(size=legend.text),
+                              legend.title=element_text(size=legend.title),
+                              axis.text=element_text(size=axis.text),
+                              axis.title=element_text(size=axis.title),
+                              plot.title=element_text(size=plot.title)) + 
+                        xlim(xlim) +
+                        ylim(ylim)
             return(p)
           }
           if(type_plot == "polygon"){
             p <- ggplot(data, aes(x=X, y=Y)) + 
-              geom_point() +
-              stat_density_2d(aes(fill=..level..), 
-                              alpha=0.1, 
-                              geom="polygon") +
-              theme(legend.text=element_text(size=legend.text),
-                    legend.title=element_text(size=legend.title),
-                    axis.text=element_text(size=axis.text),
-                    axis.title=element_text(size=axis.title),
-                    plot.title=element_text(size=plot.title))
+                        geom_point() +
+                        stat_density_2d(aes(fill=..level..), 
+                                        alpha=0.1, 
+                                        geom="polygon") +
+                        theme(legend.text=element_text(size=legend.text),
+                              legend.title=element_text(size=legend.title),
+                              axis.text=element_text(size=axis.text),
+                              axis.title=element_text(size=axis.title),
+                              plot.title=element_text(size=plot.title))
             
-            dat_lims <- lapply(data, function(v) c(min(v), max(v)))
+            dat_lims <- lapply(data,
+                               function(v) c(min(v), max(v))
+            )
             plot_lims <- ggplot_build(p)$panel$ranges[[1]][c("x.range",
                                                              "y.range")]
             
             p + scale_x_continuous(limits=dat_lims$x * 1.1) + 
-              scale_y_continuous(limits=dat_lims$y * 1.1) +
-              coord_cartesian(xlim=plot_lims$x.range,
-                              ylim=plot_lims$y.range)
+                scale_y_continuous(limits=dat_lims$y * 1.1) +
+                coord_cartesian(xlim=plot_lims$x.range,
+                                ylim=plot_lims$y.range)
             return(p)
           }
           if(type_plot == "density_contour"){
             #density plot with contours
             p <- ggplot(data, aes(x=X, y=Y)) +
-              stat_density_2d(aes(fill=..density..), 
-                              geom="raster", 
-                              contour=FALSE) +
-              scale_fill_distiller(palette=4, 
-                                   direction=1) + 
-              geom_density_2d(color="white") + 
-              ggtitle(title) + 
-              theme(legend.text=element_text(size=legend.text),
-                    legend.title=element_text(size=legend.title),
-                    axis.text=element_text(size=axis.text),
-                    axis.title=element_text(size=axis.title),
-                    plot.title=element_text(size=plot.title)) +
-              xlim(xlim) +
-              ylim(ylim)
+                        stat_density_2d(aes(fill=..density..), 
+                                        geom="raster", 
+                                        contour=FALSE) +
+                        scale_fill_distiller(palette=4, 
+                                             direction=1) + 
+                        geom_density_2d(color="white") + 
+                        ggtitle(title) + 
+                        theme(legend.text=element_text(size=legend.text),
+                              legend.title=element_text(size=legend.title),
+                              axis.text=element_text(size=axis.text),
+                              axis.title=element_text(size=axis.title),
+                              plot.title=element_text(size=plot.title)) +
+                        xlim(xlim) +
+                        ylim(ylim)
             return(p)
           } 
 }
