@@ -36,9 +36,9 @@ If you downloaded the __`CsppaRshiny`__ app locally, have all the dependencies, 
 Data required for cellular spatial point pattern analysis will be deposited on line soon:
 | Data type     | Data link |
 | ------------- | ------------- |
-| Aldh1l1 only  | Not available yet |
-| Gfap only      | Not available yet |
-| Double positive      | Not available yet |
+| Aldh1l1 only  | [link](https://github.com/viktormiok/AstrocytesHeterogenityARC/blob/main/SPP_data_all.csv) |
+| Gfap only      | [link](https://github.com/viktormiok/AstrocytesHeterogenityARC/blob/main/SPP_data_all.csv) |
+| Double positive      | [link](https://github.com/viktormiok/AstrocytesHeterogenityARC/blob/main/SPP_data_all.csv) |
 
 ## Tutorials
 
