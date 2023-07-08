@@ -18,23 +18,23 @@
 - [References](#references)
 
 ## Overview
-The R shiny app __`CsppaRshiny`__ performs machine learning analysis and visualisation of cellular spatial point patterns under hypercaloric diet shifts and it is based on [__`Csppa`__](https://github.com/viktormiok/Csppa) R-package.
+The R shiny app __`CsppaRshiny`__ performs machine learning analysis and visualization of cellular spatial point patterns under hypercaloric diet shifts and it is based on [__`Csppa`__](https://github.com/viktormiok/Csppa) R-package.
 
-The application performs 3D and 2D for visualisation of spatial point pattern density plots, allowing flexibility in order to represent the data and emphasize the question of interest. Further it allows for performing overall and local significance analysis of spatial point pattern densities, employing several statistical approaches.
+The application performs 3D and 2D for visualization of spatial point pattern density plots, allowing flexibility in order to represent the data and emphasize the question of interest. Further, it allows for performing overall and local significance analysis of spatial point pattern densities, employing several statistical approaches.
 
-K Nearest Neighbour and Random Forest classification algorithms are implemented to compare the grouping of the cells expressing different markers within and between the diets. On top of the, correlation and spatial auto-correlation of the cells expressing different markets can be compared using Mentel and Moran I test, respectively.
+K Nearest Neighbour and Random Forest classification algorithms are implemented to compare the grouping of the cells expressing different markers within and between the diets. On top of this, correlation and spatial auto-correlation of the cells expressing different markets can be compared using Mentel and Moran I test, respectively.
 
 <img src="https://user-images.githubusercontent.com/22052679/150276878-dbb3b1b9-105f-4a72-8358-9e019a74b962.png" height="800" width="900">
 
 ### Application
 
-Here we focus on the astrocytes from the arcuate nucleus from the mouse brain and the expression of Gfap and Aldh1l1 genes recovering spatial point patterns under standard chow (SC), 5 and 15 days high fat high sugar (HFHS) diet. The R-package __`Csppa`__ allows assessing whether these astrocyte populations are spatially organized and whether tend to form local identical clusters in response to a HFHS diet over time. To do that, the algorithm measures degree of spatial coherence (depicting the level of similarity between neighbors) of each astrocytic sub-type in different conditions (SC, 5d, or 15d HFHS diet) by applying Moran I spatial autocorrelation coefficient, previously described as an indicator of the level of spatial dispersion. On top of that, employing a random forest classifier determine the partitioning of the feature space shared by astrocytes expressing Gfap and Aldh1l1 in each experimental group.
+Here we focus on the astrocytes from the arcuate nucleus of the mouse brain and the expression of Gfap and Aldh1l1 genes recovering spatial point patterns under standard chow (SC), 5 and 15 days high-fat high sugar (HFHS) diet. The R-package __`Csppa`__ allows for assessing whether these astrocyte populations are spatially organized and whether tend to form local identical clusters in response to an HFHS diet over time. To do that, the algorithm measures the degree of spatial coherence (depicting the level of similarity between neighbors) of each astrocytic sub-type in different conditions (SC, 5d, or 15d HFHS diet) by applying Moran I spatial autocorrelation coefficient, previously described as an indicator of the level of spatial dispersion. On top of that, employing a random forest classifier determines the partitioning of the feature space shared by astrocytes expressing Gfap and Aldh1l1 in each experimental group.
 
 ## How to Run the App
 If you downloaded the __`CsppaRshiny`__ app locally, have all the dependencies, and wish to run it, simply open the app.R file in RStudio and click the Run App button. You need to load functions from the R folder into RStudio before running the __`CsppaRshiny`__ app or you need to install the R-package [__`Csppa`__](https://github.com/viktormiok/Csppa).
 
 ## Data
-Data required for cellular spatial point pattern analysis will be deposited on line soon:
+Data required for cellular spatial point pattern analysis will be deposited online soon:
 | Data type     | Link to the data | Code to get the data |
 | ------------- | ------------- | ------------- |
 | Aldh1l1 only  | [link](https://github.com/viktormiok/AstrocytesHeterogenityARC/blob/main/SPP_data_all.csv) | [link](https://github.com/viktormiok/AstrocytesHeterogenityARC/blob/main/Csppa_analysis.ipynb) |
@@ -50,7 +50,7 @@ Please see the following notebook for detailed examples of what you can do with 
 
 ## License
 
-__`CsppaRshiny`__ is distributed under the MIT license. The informatoin about the license of __`CsppaRshiny`__ can be finid in the `LICENSE` file. Please read the license before using __`CsppaRshiny`__.
+__`CsppaRshiny`__ is distributed under the MIT license. The information about the license of __`CsppaRshiny`__ can be found in the `LICENSE` file. Please read the license before using __`CsppaRshiny`__.
 
 
 ## References
