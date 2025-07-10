@@ -22,7 +22,7 @@ The R shiny app __`CsppaRshiny`__ performs machine learning analysis and visuali
 
 The application visualizes spatial point pattern density plots in 3D and 2D, allowing flexibility in representing the data and emphasizing the question of interest. It also provides for overall and local significance analysis of spatial point pattern densities, employing several statistical approaches.
 
-K Nearest Neighbour and Random Forest classification algorithms are implemented to compare the grouping of the cells expressing different markers within and between the diets. In addition, correlation and spatial auto-correlation of the cells expressing different markets can be compared using the Mentel and Moran I tests, respectively.
+K-Nearest Neighbour and Random Forest classification algorithms are implemented to compare the grouping of the cells expressing different markers within and between the diets. In addition, correlation and spatial auto-correlation of the cells expressing different markets can be compared using the Mantel and Moran I tests, respectively.
 
 <img src="https://user-images.githubusercontent.com/22052679/150276878-dbb3b1b9-105f-4a72-8358-9e019a74b962.png" height="800" width="900">
 
