@@ -18,7 +18,7 @@
 - [References](#references)
 
 ## Overview
-The R shiny app __`CsppaRshiny`__ performs machine learning analysis and visualization of cellular spatial point patterns under hypercaloric diet shifts, and it is based on [__`Csppa`__](https://github.com/viktormiok/Csppa) R-package.
+The R Shiny app __`CsppaRshiny`__ performs machine learning analysis and visualization of cellular spatial point patterns under hypercaloric diet shifts, and it is based on [__`Csppa`__](https://github.com/viktormiok/Csppa) R-package.
 
 The application visualizes spatial point pattern density plots in 3D and 2D, allowing flexibility in representing the data and emphasizing the question of interest. It also provides for overall and local significance analysis of spatial point pattern densities, employing several statistical approaches.
 
@@ -28,10 +28,10 @@ K-Nearest Neighbour and Random Forest classification algorithms are implemented 
 
 ### Application
 
-Here, we focus on astrocytes from the arcuate nucleus of the mouse brain and the expression of Gfap and Aldh1l1 genes, recovering spatial point patterns under a standard chow (SC), 5-day, and 15-day high-fat high-sugar (HFHS) diets. The R-package __`Csppa`__ allows for assessing whether these astrocyte populations are spatially organized and whether they tend to form local identical clusters in response to an HFHS diet over time. To do that, the algorithm measures the degree of spatial coherence (depicting the level of similarity between neighbors) of each astrocytic subtype in different conditions (SC, 5d, or 15d HFHS diet) by applying the Moran I spatial autocorrelation coefficient, previously described as an indicator of the level of spatial dispersion. On top of that, employing a random forest classifier determines the partitioning of the feature space shared by astrocytes expressing Gfap and Aldh1l1 in each experimental group.
+Here, we focus on astrocytes from the arcuate nucleus of the mouse brain and the expression of Gfap and Aldh1l1 genes, recovering spatial point patterns under a standard chow (SC), 5-day, and 15-day high-fat high-sugar (HFHS) diets. The R-package __`Csppa`__ allows for assessing whether these astrocyte populations are spatially organized and whether they tend to form local identical clusters in response to an HFHS diet over time. To do that, the algorithm measures the degree of spatial coherence (depicting the level of similarity between neighbors) of each astrocytic subtype in different conditions (SC, 5d, or 15d HFHS diet) by applying the Moran I spatial autocorrelation coefficient, previously described as an indicator of the level of spatial dispersion. Additionally, the use of a random forest classifier enables the delineation of feature space partitions shared by astrocytes expressing Gfap and Aldh1l1 across experimental groups.
 
 ## How to Run the App
-If you downloaded the __`CsppaRshiny`__ app locally, have all the dependencies, and wish to run it, open the app.R file in RStudio and click the Run App button. You need to load functions from the R folder into RStudio before running the __`CsppaRshiny`__ app, or you need to install the R-package [__`Csppa`__](https://github.com/viktormiok/Csppa).
+If you downloaded the __`CsppaRshiny`__ app locally, have all the dependencies, and wish to run it, open the app. R file in RStudio and click the Run App button. You need to load functions from the R folder into RStudio before running the __`CsppaRshiny`__ app, or you need to install the R-package [__`Csppa`__](https://github.com/viktormiok/Csppa).
 
 ## Data
 Data required for cellular spatial point pattern analysis will be deposited online soon:
