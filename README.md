@@ -31,7 +31,7 @@ K-Nearest Neighbour and Random Forest classification algorithms are implemented 
 Here, we focus on astrocytes from the arcuate nucleus of the mouse brain and the expression of Gfap and Aldh1l1 genes, recovering spatial point patterns under a standard chow (SC), 5-day, and 15-day high-fat high-sugar (HFHS) diets. The R-package __`Csppa`__ allows for assessing whether these astrocyte populations are spatially organized and whether they tend to form local identical clusters in response to an HFHS diet over time. The algorithm evaluates the spatial coherence of each astrocytic subtype—reflecting the similarity between neighbouring cells—under different conditions (SC, 5d, or 15d HFHS diet) by applying Moran’s I spatial autocorrelation coefficient, a recognised measure of spatial dispersion. Additionally, the use of a random forest classifier enables the delineation of feature space partitions shared by astrocytes expressing Gfap and Aldh1l1 across experimental groups.
 
 ## How to Run the App
-If you downloaded the __`CsppaRshiny`__ app locally, have all the dependencies, and wish to run it, open the app. R file in RStudio and click the Run App button. You need to load functions from the R folder into RStudio before running the __`CsppaRshiny`__ app, or you need to install the R-package [__`Csppa`__](https://github.com/viktormiok/Csppa).
+To run the __`CsppaRshiny`__ app locally, ensure all dependencies are installed. Open the app.R file in RStudio and click Run App. Before launching, either load the functions from the R folder into RStudio or install the R-package [__`Csppa`__](https://github.com/viktormiok/Csppa).
 
 ## Data
 Data required for cellular spatial point pattern analysis will be deposited online soon:
@@ -50,7 +50,7 @@ Please see the following notebook for detailed examples of what you can do with 
 
 ## License
 
-__`CsppaRshiny`__ is distributed under the MIT license. The information about the license of __`CsppaRshiny`__ can be found in the `LICENSE` file. Please read the license before using __`CsppaRshiny`__.
+__`CsppaRshiny`__ is distributed under the MIT license. Details about the license of __`CsppaRshiny`__ are provided in the `LICENSE` file. Please read the license before using __`CsppaRshiny`__.
 
 
 ## References
