@@ -28,7 +28,9 @@ K-Nearest Neighbour and Random Forest classification algorithms are implemented 
 
 ### Application
 
-Here, we focus on astrocytes from the arcuate nucleus of the mouse brain and the expression of Gfap and Aldh1l1 genes, recovering spatial point patterns under a standard chow (SC), 5-day, and 15-day high-fat high-sugar (HFHS) diets. The R-package __`Csppa`__ allows for assessing whether these astrocyte populations are spatially organized and whether they tend to form local identical clusters in response to an HFHS diet over time. The algorithm evaluates the spatial coherence of each astrocytic subtype—reflecting the similarity between neighbouring cells—under different conditions (SC, 5d, or 15d HFHS diet) by applying Moran’s I spatial autocorrelation coefficient, a recognised measure of spatial dispersion. Additionally, the use of a random forest classifier enables the delineation of feature space partitions shared by astrocytes expressing Gfap and Aldh1l1 across experimental groups.
+Here, we focus on astrocytes in the arcuate nucleus of the mouse brain, examining the expression of Gfap and Aldh1l1 and reconstructing their spatial point patterns under standard chow (SC), 5‑day, and 15‑day high‑fat high‑sugar (HFHS) diets.
+The R package Csppa enables the assessment of whether these astrocyte populations exhibit spatial organisation and a tendency to form locally homogeneous clusters in response to HFHS exposure over time. Spatial coherence of each astrocytic subtype, defined as similarity among neighbouring cells, is quantified across conditions (SC, 5d, and 15d HFHS) using Moran’s I, a well-established measure of spatial autocorrelation.
+In addition, a random forest classifier is applied to identify shared feature space partitions among astrocytes expressing Gfap and Aldh1l1 across experimental groups.
 
 ## How to Run the App
 To run the __`CsppaRshiny`__ app locally, ensure all dependencies are installed. Open the app.R file in RStudio and click Run App. Before launching, either load the functions from the R folder into RStudio or install the R-package [__`Csppa`__](https://github.com/viktormiok/Csppa).
