@@ -18,7 +18,7 @@
 - [References](#references)
 
 ## Overview
-The R Shiny app __`CsppaRshiny`__ performs machine learning analysis and visualization of cellular spatial point patterns under hypercaloric diet shifts, and it is based on [__`Csppa`__](https://github.com/viktormiok/Csppa) R-package.
+The R Shiny app __`CsppaRshiny`__ performs machine learning analysis and visualization of cellular spatial point patterns under hypercaloric diet shifts, and it is based on [__`Csppa`__](https://github.com/viktormiok/Csppa) R package.
 
 The application visualises spatial point pattern density in both 2D and 3D, offering flexible data representation tailored to the research question. It also enables both global and local significance assessment of these densities using a range of statistical methods.
 
